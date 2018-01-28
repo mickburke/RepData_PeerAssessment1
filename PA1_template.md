@@ -10,7 +10,7 @@ output:
 
 ```r
 knitr::opts_chunk$set(
-  fig.path = "figures/"
+  fig.path = "figure/"
 )
 options(scipen=999)
 library(dplyr)
@@ -29,7 +29,7 @@ stepsPerDay <- data %>% group_by(date) %>% summarize(steps=sum(steps, na.rm=TRUE
 hist(x=stepsPerDay$steps, breaks=tally(stepsPerDay)$n, plot=TRUE, main="Steps taken per day", ylab="Number of days", xlab="Steps per day", col="green")
 ```
 
-![](figures/unnamed-chunk-2-1.png)<!-- -->
+![](figure/unnamed-chunk-2-1.png)<!-- -->
 
 Mean steps per day is `` 9354.2295082 ``.
 
@@ -47,7 +47,7 @@ plot(x = meanStepsPerInterval$interval, y = meanStepsPerInterval$steps, type="l"
 lines(x = meanStepsPerInterval$interval, y = meanStepsPerInterval$steps, type="l")
 ```
 
-![](figures/unnamed-chunk-3-1.png)<!-- -->
+![](figure/unnamed-chunk-3-1.png)<!-- -->
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -69,7 +69,7 @@ medianImputedStepsPerDay <- median(imputedStepsPerDay$steps)
 hist(x=imputedStepsPerDay$steps, breaks=tally(imputedStepsPerDay)$n, plot=TRUE, main="Steps taken per day (imputed data)", ylab="Number of days", xlab="Steps per day", col="green")
 ```
 
-![](figures/unnamed-chunk-4-1.png)<!-- -->
+![](figure/unnamed-chunk-4-1.png)<!-- -->
 
 The number of steps were not recorded for some intervals. The average across all days per interval was used to impute any missing interval values. This gave a mean steps per day of `` 10766.1886792 `` and a median steps per day of `` 10766.1886792 ``.
 
@@ -111,7 +111,7 @@ plot(x = meanStepsPerIntervalWeekday$interval, y = meanStepsPerIntervalWeekday$s
 lines(x = meanStepsPerIntervalWeekday$interval, y = meanStepsPerIntervalWeekday$steps, type="l")
 ```
 
-![](figures/unnamed-chunk-6-1.png)<!-- -->
+![](figure/unnamed-chunk-6-1.png)<!-- -->
 
 The plots above show the average steps taken per day per interval during the weekend and on weekdays. Weekdays seem to have a higher peak with the intervals around 8am being most active. Weekdays also seem to have an earlier start with more activity before 6.30am. However, weekends seem to be more active throughout the day and for later in the evening, e.g. a spike after 7.30pm that isn't there for weekdays. Some of this visual analysis is borne out in the summary data below, showing higher mean activity during the week. 
 

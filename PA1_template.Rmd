@@ -10,7 +10,7 @@ output:
 ```{r echo=TRUE, warning=FALSE, message=FALSE}
 
 knitr::opts_chunk$set(
-  fig.path = "figures/"
+  fig.path = "figure/"
 )
 options(scipen=999)
 library(dplyr)
